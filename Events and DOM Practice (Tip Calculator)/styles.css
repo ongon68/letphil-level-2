@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: lightgray;
+}
+
+.border {
+    border: 1px solid black;
+    margin: auto;
+    width: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    display: flex;
+    background-color: lightgreen;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+}
+
+.inside {
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+}
+
+#splitPeople {
+    width: 200px;
+    justify-content: center;
+}

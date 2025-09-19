@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator</title>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <div>
-        <h1>Tip Calculator</h1>
-        <p>Enter your bill amount:</p>
-        <input id="checkTotal" placeholder="Enter Check Total Here"/>
-        <br>
-        <button id="calcTipBtn5%">Claculate Tip 5%</button>
-        <button id="calcTipBtn7.5%">Claculate Tip 7.5%</button>
-        <button id="calcTipBtn10%">Claculate Tip 10%</button>
-        <p id="tipAmount"></p>
+    <div class="border">
+        <div class="inside">
+            <h1>Tip Calculator</h1>
+            <p>Enter your bill amount:</p>
+            <input id="checkTotal" type="text" placeholder="Enter Check Total Here"/>
+            <br>
+            <br>
+            <button id="calcTipBtn5%">Claculate Tip 5%</button>
+            <button id="calcTipBtn7.5%">Claculate Tip 7.5%</button>
+            <button id="calcTipBtn10%">Claculate Tip 10%</button>
+            <p id="tipAmount"></p>
+            <br>
+            <p>How many people are splitting the bill:</p>
+            <input id="splitPeople" type="text" placeholder="Enter split total here"/>
+            <br>
+            <br>
+            <button id="splitBill">Split Bill</button>
+            <p id="splitAmount"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
 
 <!-- Stretch Tasks
-    - add CSS to make it look good
-    - handle incorrect input type error
-    - round if tip total has more decimals is more than 0.00
-    - add an option for splitting check between X number of people
+    - add CSS to make it look good [X]
+    - handle incorrect input type error [X]
+    - round if tip total has more decimals is more than 0.00 [X]
+    - add an option for splitting check between X number of people []
 -->
 
