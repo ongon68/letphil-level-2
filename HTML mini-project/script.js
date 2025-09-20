@@ -73,7 +73,7 @@ features.forEach((feature) => {
 const chageThemeButton = document.getElementById("themeBtn");
 
 chageThemeButton.addEventListener("click", () => {
-    document.body.style.color = "red";
+    document.body.style.backgroundColor = "lightblue";
 });
 
 // ---------------------------------------------------------------------
