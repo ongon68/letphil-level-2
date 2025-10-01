@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home page</title>
+    <title>homepage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="homePageBody">
     <!-- Header Section -->
-     <header>
-        <title id="welcomeByTime"></title>
+     <header class="homePageHeader">
+        <h1>My Personal Website</h1>
         <nav>
             <ul>
-                <li>Weather</li>
-                <li>Tasks</li>
-                <li>Notes</li>
+                <li><a href="weather.html">Weather<a></li>
+                <li><a href="tasks.html">Tasks<a></li>
+                <li><a href="notes.html">Notes<a></li>
             </ul>
         </nav>
      </header>
-     
+
+     <!-- Body Section -->
+     <section class="homePageImage">
+        <div class="homePageText">
+            <h2 id="welcomeMessageByTime"></h2>
+            <h3 id="currentLocalTime"></h3>
+        </div>
+     </section>
+     <script src="script.js"></script>
 </body>
 </html>
