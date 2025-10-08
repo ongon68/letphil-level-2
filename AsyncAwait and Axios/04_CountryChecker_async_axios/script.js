@@ -48,6 +48,8 @@ searchBtn.addEventListener("click", async () => {
         const url = `https://restcountries.com/v3.1/name/${countryInputName}`;
 
         const response = await axios.get(url);
+
+        console.log(response);
         
         const data = response.data[0];
         const countryName = data.name.common;

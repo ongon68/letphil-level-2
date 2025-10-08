@@ -1,6 +1,4 @@
-// Todo's
-// 1: Dynamic welcome message based on the time of day
-// 2: 
+// HOME PAGE SCRIPTING
 
 document.addEventListener("DOMContentLoaded", () => {
     const welcomeMessageByTime = document.getElementById("welcomeMessageByTime");
@@ -40,32 +38,90 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Home Page text color by time
-    function textColorByTime(hour) {
-        if (hour >= 5 && hour < 12) {
-            return "black";
-        }
-        else if (hour >= 12 && hour < 17) {
-            return "black";
-        }
-        else if (hour >= 17 && hour < 21) {
-            return "black";
-        }
-        else {
-            return "white";
-        }
-    }
-
     function updateTime() {
         const hour = new Date().getHours();
         const greetingText = localTimeGreeting(hour);
         welcomeMessageByTime.textContent = greetingText;
         homePageImage.style.backgroundImage = backgroundByTime(hour);
-        homePagetext.style.color = textColorByTime(hour);
         timeOfDay.textContent = `The current local time is: ${new Date().toLocaleTimeString()}`;
     }
 
     updateTime();
 
     setInterval(updateTime, 1000);
+});
+
+
+// WEATHER PAGE SCRIPTING
+
+const locationInput = document.getElementById("locationInput");
+const getWeatherBtn = document.getElementById("getWeatherBtn");
+const weatherDisplay = document.getElementById("weatherDisplay");
+
+// API INFO URL https://api.openweathermap.org/data/2.5/weather?q={city}&appid=f30f8a7c50af2832bfbcab966c2b9f99
+
+getWeatherBtn.addEventListener("click", async () => {
+    try {
+        const locationInputName = locationInput.value.trim();
+        console.log(locationInputName);
+
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${locationInputName}&appid=f30f8a7c50af2832bfbcab966c2b9f99`
+        console.log(weatherUrl)
+        
+        const weatherResponse = await axios.get(weatherUrl);
+        console.log(weatherResponse); // error here, no idea why
+
+        const data = weatherResponse.data[0];
+        const locationWeather = data.main.temp;
+
+        weatherDisplay.innerHTML = `<h2>${locationWeather.toUpperCase()}<h2>`;
+    }
+    catch (error) {
+        weatherDisplay.innerHTML = `<p>Failed to load location weather</p>`
+    }
 })
+
+
+
+// TASKS PAGE SCRIPTING
+
+const taskInput = document.getElementById("taskInput");
+const addTaskBtn = document.getElementById("addTaskBtn");
+const taskList = document.getElementById("taskList");
+
+// LOAD TASKS FROM LOCAL STORAGE
+const taskItems = JSON.parse(localStorage.getItem("tasks")) || []; {
+    renderTasks();
+}
+
+// ADD TASK
+addTaskBtn.addEventListener("click", () => {
+    const taskString = taskInput.value.trim() + " ";
+    taskItems.push(taskString);
+    localStorage.setItem("tasks", JSON.stringify(taskItems));
+    renderTasks();
+    taskInput.value = "";
+});
+
+// RENDER TASKS
+function renderTasks() {
+    taskList.innerHTML = "";
+    taskItems.forEach((item, index) => {
+        const newListItem = document.createElement("li");
+        newListItem.textContent = item;
+
+        const removeTaskBtn = document.createElement("button");
+        removeTaskBtn.textContent = "❌";
+        removeTaskBtn.addEventListener("click", () => {
+            taskItems.splice(index, 1);
+            localStorage.setItem("item", JSON.stringify(item));
+            renderTasks();
+        });
+        newListItem.appendChild(removeTaskBtn);
+        taskList.appendChild(newListItem);
+    });
+}
+
+
+
+// NOTES PAGE SCRITPING

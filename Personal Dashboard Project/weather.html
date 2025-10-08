@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>weather page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="home.html">Home<a></li>
-            <li><a href="notes.html">Notes<a></li>
-            <li><a href="tasks.html">Tasks<a></li>
-        </ul>
-    </nav>
+<body id="weatherPageBody">
+    <!-- Header Section -->
+     <header class="allPageHeaders">
+        <h1 id="weatherPageHeaderText">Weekly Forcast</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home<a></li>
+                <li><a href="tasks.html">Tasks<a></li>
+                <li><a href="notes.html">Notes<a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="dayForcastCard" class="card">
+            <input type="text" id="locationInput" placeholder="Enter A Location Here"/>
+            <br>
+            <button id="getWeatherBtn">Check Weather</button>
+            <div id="weatherDisplay"></div>
+
+        </section>
+        
+        <section class="weeklyForcast">
+            
+        </section>
+    </div>
+    
+
+    <script src="script.js"></script>
 </body>
 </html>
