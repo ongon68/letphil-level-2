@@ -3,10 +3,7 @@ Body {
     padding: 0;
 }
 
-
-/* ALL PAGES */
-
-.allPageHeaders {
+.header {
     position: fixed;
     top: 10px;
     left: 10px;
@@ -44,28 +41,6 @@ nav a:hover {
     top: 150px;
 }
 
-
-/* HOME PAGE STYLING */
-
-.homePageImage {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
-}
-
-.homePageText {
-    color: white;
-    text-align: center;
-    text-shadow: 2px 2px 5px black;
-}
-
-
-/* WEATHER PAGE STYLING */
-
 #weatherPageBody {
     background-color: rgb(19, 3, 87);
 }
@@ -78,18 +53,15 @@ nav a:hover {
     color: white;
 }
 
-
-/* TASK PAGE STYLING */
-
-/* #tasksContainer {
-    position: relative;
-    text-align: center;
-    top: 150px;
-} */
-
-#taskList {
+#weekWeather {
+    color: white;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    width: fit-content;
+    box-sizing: border-box;
+    margin: auto;
 }
-
-
-/* NOTES PAGE STYLING */
