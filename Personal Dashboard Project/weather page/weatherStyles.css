@@ -1,6 +1,7 @@
 Body {
     margin: 0;
     padding: 0;
+    background-color: rgb(19, 3, 87);
 }
 
 .header {
@@ -20,7 +21,6 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    width: stretch;
     gap: 20px;
 }
 
@@ -39,10 +39,6 @@ nav a:hover {
     position: relative;
     text-align: center;
     top: 150px;
-}
-
-#weatherPageBody {
-    background-color: rgb(19, 3, 87);
 }
 
 #todaysWeatherTitle {

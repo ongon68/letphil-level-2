@@ -1,9 +1,9 @@
+// API INFO URL https://api.openweathermap.org/data/2.5/weather?q={city}&appid=f30f8a7c50af2832bfbcab966c2b9f99
+
 const locationInput = document.getElementById("locationInput");
 const getWeatherBtn = document.getElementById("getWeatherBtn");
 const weatherDisplay = document.getElementById("weatherDisplay");
 const weekWeather = document.getElementById("weekWeather");
-
-// API INFO URL https://api.openweathermap.org/data/2.5/weather?q={city}&appid=f30f8a7c50af2832bfbcab966c2b9f99
 
 getWeatherBtn.addEventListener("click", async () => {
     const locationInputName = locationInput.value.toLowerCase().trim();
@@ -57,6 +57,8 @@ getWeatherBtn.addEventListener("click", async () => {
 
             weekWeather.appendChild(newListItem);
         }
+        weekWeather.style.padding = `25px`;
+
     }
     catch (error) {
         weekWeather.innerHTML = `<p>Failed to load weekly forcast 2</p>`
