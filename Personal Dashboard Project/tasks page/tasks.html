@@ -20,13 +20,17 @@
     </header>
 
     <!-- Body Section -->
-     <div class="container" id="tasksContainer">
+     <div class="container" id="bodyContent">
+        
         <input type="text" id="taskInput" placeholder="Enter Task Here"/>
         <button id="addTaskBtn">Add Task</button>
-        <ul id="taskList"></ul>
+
+        <div class="taskContainer" id="pendingTasks">
+            <h3>current tasks</h3>
+            <ul class="taskList" id="currentTaskList"></ul>
+        </div>
+
      </div>
-
-
     <script src="taskScript.js"></script>
 </body>
 </html>

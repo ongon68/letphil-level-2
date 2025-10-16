@@ -4,6 +4,8 @@ const locationInput = document.getElementById("locationInput");
 const getWeatherBtn = document.getElementById("getWeatherBtn");
 const weatherDisplay = document.getElementById("weatherDisplay");
 const weekWeather = document.getElementById("weekWeather");
+const weekWeatherTitle = document.getElementById("weekWeatherTitle");
+const weekWeatherContainer = document.getElementById("weekWeatherContainer");
 
 getWeatherBtn.addEventListener("click", async () => {
     const locationInputName = locationInput.value.toLowerCase().trim();
@@ -34,7 +36,11 @@ getWeatherBtn.addEventListener("click", async () => {
     }
 
     try {
+        weekWeatherTitle.innerHTML = "";
         weekWeather.innerHTML = "";
+
+        weekWeatherTitle.innerText = "4-Day Forecast";
+
         const response = await fetch(weekUrl);
         console.log(response);
 
@@ -43,11 +49,11 @@ getWeatherBtn.addEventListener("click", async () => {
         const data = await response.json();
         console.log(data);
 
-        for (let i = 0; i < 33; i += 8) {
+        for (let i = 8; i < 33; i += 8) {
             let weatherText = data.list[i].weather[0].main;
             let img = data.list[i].weather[0].icon;
             let temp = data.list[i].main.temp;
-            let day = data.list[i].dt_txt;
+            let day = data.list[i].dt_txt.split(" ")[0];
 
             let newListItem = document.createElement("li");
             newListItem.innerHTML = `<h2>${day}</h2>
@@ -57,7 +63,7 @@ getWeatherBtn.addEventListener("click", async () => {
 
             weekWeather.appendChild(newListItem);
         }
-        weekWeather.style.padding = `25px`;
+        weekWeatherContainer.style.padding = `25px`;
 
     }
     catch (error) {
