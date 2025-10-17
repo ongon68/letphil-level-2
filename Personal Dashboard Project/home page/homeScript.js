@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const welcomeMessageByTime = document.getElementById("welcomeMessageByTime");
     const timeOfDay = document.getElementById("currentLocalTime");
     const homePageImage = document.querySelector(".homePageImage");
-    const homePagetext = document.querySelector(".homePageText");
 
     // Greetings by time
     function localTimeGreeting(hour) {

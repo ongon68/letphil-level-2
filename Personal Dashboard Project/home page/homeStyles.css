@@ -1,4 +1,4 @@
-Body {
+body {
     margin: 0;
     padding: 0;
 }
@@ -11,9 +11,12 @@ Body {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
-    text-align: center;
     backdrop-filter: blur(6px);
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
